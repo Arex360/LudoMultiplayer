@@ -10,6 +10,7 @@ public class GreenPath : MonoBehaviour
     public static GreenPath instance;
     void Start()
     {
+        path.Clear();
         instance = this;
         pathDict = new Dictionary<int, Transform>();
         int id = 0;

@@ -2,12 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class YellowPath : MonoBehaviour
+public class BluePath : MonoBehaviour
 {
     public float radius;
     public List<Transform> path;
     public Dictionary<int, Transform> pathDict;
-    public static YellowPath instance;
+    public static BluePath instance;
     void Start()
     {
         path.Clear();
@@ -32,11 +32,5 @@ public class YellowPath : MonoBehaviour
     void Update()
     {
         
-    }
-    private void OnDrawGizmos()
-    {
-        Gizmos.color = Color.yellow;
-        int id = 0;
-       
     }
 }

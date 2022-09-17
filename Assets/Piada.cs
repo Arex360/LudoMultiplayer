@@ -14,7 +14,10 @@ public class Piada : NetworkBehaviour
         while (true)
         {
             localV++;
-            CmdSetValue(localV);
+            if (hasAuthority)
+            {
+                CmdSetValue(localV);
+            }
             yield return new WaitForSeconds(0.5f);
         }
     }
@@ -35,6 +38,15 @@ public class Piada : NetworkBehaviour
         if(color == Data.DICE.Yellow)
         {
             this.transform.position = YellowPath.instance.pathDict[n].position;
+        }else if(color == Data.DICE.Blue)
+        {
+            this.transform.position = BluePath.instance.pathDict[n].position;
+        }else if(color == Data.DICE.Red)
+        {
+            this.transform.position = RedPath.instance.pathDict[n].position;
+        }else if(color == Data.DICE.Green)
+        {
+            this.transform.position = GreenPath.instance.pathDict[n].position;
         }
     }
 }

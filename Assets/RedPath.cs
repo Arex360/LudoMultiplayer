@@ -10,6 +10,7 @@ public class RedPath : MonoBehaviour
     public static RedPath instance;
     void Start()
     {
+        path.Clear();
         instance = this;
         pathDict = new Dictionary<int, Transform>();
         int id = 0;
