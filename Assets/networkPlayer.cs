@@ -16,6 +16,10 @@ public class networkPlayer : NetworkBehaviour
         {
             canvas.SetActive(false);
         }
+        for(int i = 0; i < 100; i++)
+        {
+            print(Dice.Roll());
+        }
     }
     private void Update()
     {
