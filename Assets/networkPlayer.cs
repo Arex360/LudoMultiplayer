@@ -32,10 +32,32 @@ public class networkPlayer : NetworkBehaviour
         {
             CmdSpawn();
         }
+        if (Input.GetKeyDown(KeyCode.Alpha1))
+        {
+            CmdSpawnTeam((int) Data.DICE.Yellow);
+        }
+        if (Input.GetKeyDown(KeyCode.Alpha2))
+        {
+            CmdSpawnTeam((int)Data.DICE.Red);
+        }
+        if (Input.GetKeyDown(KeyCode.Alpha3))
+        {
+            CmdSpawnTeam((int)Data.DICE.Green);
+        }
+        if (Input.GetKeyDown(KeyCode.Alpha4))
+        {
+            CmdSpawnTeam((int)Data.DICE.Blue);
+        }
     }
     public void SetTicker()
     {
         Data.ticker = tickerText.text;
+    }
+    [Command]
+    public void CmdSpawnTeam(int team)
+    {
+        GameObject plr = Instantiate(NetworkManager.singleton.spawnPrefabs[team]);
+        NetworkServer.Spawn(plr, connectionToClient);
     }
     [Command]
     public void CmdSpawn()

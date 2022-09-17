@@ -13,6 +13,8 @@ GameObject:
   - component: {fileID: 8787178335593648770}
   - component: {fileID: 105031309359751446}
   - component: {fileID: 2890098402563182338}
+  - component: {fileID: 4877574225127504078}
+  - component: {fileID: 8736291110158604133}
   m_Layer: 0
   m_Name: Red
   m_TagString: Untagged
@@ -100,7 +102,7 @@ MonoBehaviour:
   sceneId: 0
   serverOnly: 0
   visible: 0
-  m_AssetId: 12a19628b63c45b4ea2a50abb0a6ce54
+  m_AssetId: 9277b05fce7a23a418f206179dec6a94
   hasSpawned: 0
 --- !u!114 &2890098402563182338
 MonoBehaviour:
@@ -117,3 +119,28 @@ MonoBehaviour:
   syncMode: 0
   syncInterval: 0.1
   network_ticker: 
+--- !u!65 &4877574225127504078
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7129946238572491607}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.019498555, y: 0.019009683, z: 0.018872686}
+  m_Center: {x: 0, y: 0.0004951557, z: 0.009436343}
+--- !u!114 &8736291110158604133
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7129946238572491607}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3e11c075a5845c940ae1e2654a9deb96, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
