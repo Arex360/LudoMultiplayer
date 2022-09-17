@@ -7,13 +7,14 @@ public class YellowPath : MonoBehaviour
     public float radius;
     public List<Transform> path;
     public Dictionary<int, Transform> pathDict;
+    public static YellowPath instance;
     void Start()
     {
+        instance = this;
         pathDict = new Dictionary<int, Transform>();
         int id = 0;
         foreach (Transform obj in this.transform)
         {
-            Gizmos.DrawSphere(obj.position, radius);
             path.Add(obj);
             if (!obj.GetComponent<PathPoint>())
             {
@@ -21,6 +22,7 @@ public class YellowPath : MonoBehaviour
             }
             obj.GetComponent<PathPoint>().index = id;
             pathDict.Add(id, obj);
+            print(pathDict[id].position);
             id++;
         }
     }

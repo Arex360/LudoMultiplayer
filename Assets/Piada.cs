@@ -7,16 +7,22 @@ public class Piada : NetworkBehaviour
     public Data.DICE color;
     [SyncVar(hook = "OnChangeValue")]
     public int value;
+    public int localV;
 
-    void Start()
+    IEnumerator Start()
     {
-        
+        while (true)
+        {
+            localV++;
+            CmdSetValue(localV);
+            yield return new WaitForSeconds(0.5f);
+        }
     }
 
     private void Update()
     {
         if (!hasAuthority) return;
-        CmdSetValue(value);
+        CmdSetValue(localV);
     }
 
     [Command]
@@ -26,6 +32,9 @@ public class Piada : NetworkBehaviour
     }
     public void OnChangeValue(int o, int n)
     {
-
+        if(color == Data.DICE.Yellow)
+        {
+            this.transform.position = YellowPath.instance.pathDict[n].position;
+        }
     }
 }
